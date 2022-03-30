@@ -1,0 +1,18 @@
+"""
+
+Staging table already created using the following DDL:
+
+create table smaple_data(
+    year varchar(255),
+    industry_aggregation_nzsioc varchar(255),
+    industry_code_nzsioc varchar(255),
+    industry_name_nzsioc varchar(255),
+    units varchar(255),
+    variable_code varchar(255),
+    variable_name varchar(255),
+    variable_category varchar(255),
+    value varchar(255),
+    industry_code_anzsic06 varchar(255)
+)
+
+"""
