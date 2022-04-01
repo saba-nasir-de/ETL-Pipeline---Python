@@ -10,7 +10,12 @@ def main():
 	#start Sourcing
 
 	source_calls_data =  Sourcing("`smaple_data_saba`","`daud`",mysql_conn.mysql_connection)
-	source_calls_data.load_csv_to_mysql("D:\\sample.csv")
+	print("Data loading started...")
+	source_calls_data.load_csv_to_mysql("C:\\python_projects\\pipeline\\sample.csv")
+	print("Data loading completed!!")
 	
 	#heyyy
+	#hi
 	
+if __name__=="__main__":
+    main()

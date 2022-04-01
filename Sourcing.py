@@ -5,6 +5,7 @@ In the current scenerio, We are loading data from csv files only
 """
 # import OS module
 import os
+import pandas as pd
 
 class Sourcing:
     def __init__(self,staging_table_name,staging_table_schema,connection):
