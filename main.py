@@ -14,6 +14,12 @@ def main():
 	source_calls_data.load_csv_to_mysql("C:\\python_projects\\pipeline\\sample.csv")
 	print("Data loading completed!!")
 	
+	#start tranforming an dloading data to final table
+	transform = Transform_Load(source_calls_data.staging_table_name,source_calls_data.staging_table_schema,mysql_conn.mysql_connection)
+	print("Data transformation started!!")
+	transform.transform_Load_sampledata()
+	print("Data transformation and loading to final table completed!!")
+	
 	#heyyy
 	#hi
 	
