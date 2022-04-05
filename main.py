@@ -1,9 +1,19 @@
 from Connection import *
 from Sourcing import *
 from Transform_Load import *
-
+import json
 
 def main():
+
+	# load credentials froma json file
+	# Opening JSON file
+	credentials_file = open('data.json')
+	 
+	# returns JSON object as
+	# a dictionary
+	credentials = json.loads(credentials_file)
+	
+	
 	#connect to staging db
 	mysql_conn = Connection()
 	mysql_conn.create_mysql_connection("daud.saleemi", "daud@123", "10.36.25.74", "3306")

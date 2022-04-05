@@ -1,8 +1,8 @@
 {
-username:,
-password:,
-ip:,
-port:,
-file_path:,
+"username":"",
+"password":"",
+"ip":"",
+"port":"",
+"file_path":""
 
 }
