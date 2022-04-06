@@ -5,33 +5,29 @@ import json
 
 def main():
 
-	# load credentials froma json file
-	# Opening JSON file
-	credentials_file = open('data.json')
-	 
-	# returns JSON object as
-	# a dictionary
-	credentials = json.loads(credentials_file)
-	
-	
+	# load credentials from a json file
+	credentials_file = open('context.json')
+	credentials = json.load(credentials_file)
+	username,password,ip,port,file_path  = credentials["username"],credentials["password"],credentials["ip"],credentials["port"],credentials["file_path"]
+		
 	#connect to staging db
 	mysql_conn = Connection()
-	mysql_conn.create_mysql_connection("daud.saleemi", "daud@123", "10.36.25.74", "3306")
+	mysql_conn.create_mysql_connection(username, password, ip, port)
+	
+	#load context
+	staging_table_name,staging_table_schema,file_path  = credentials["staging_table_name"],credentials["staging_table_schema"],credentials["file_path"]
 	#start Sourcing
-
-	source_calls_data =  Sourcing("`smaple_data_saba`","`daud`",mysql_conn.mysql_connection)
+	source_calls_data =  Sourcing(staging_table_name,staging_table_schema ,mysql_conn.mysql_connection)
 	print("Data loading started...")
-	source_calls_data.load_csv_to_mysql("C:\\python_projects\\pipeline\\sample.csv")
+	source_calls_data.load_csv_to_mysql(file_path)
 	print("Data loading completed!!")
 	
-	#start tranforming an dloading data to final table
+	#start transforming and loading data to final table
 	transform = Transform_Load(source_calls_data.staging_table_name,source_calls_data.staging_table_schema,mysql_conn.mysql_connection)
 	print("Data transformation started!!")
 	transform.transform_Load_sampledata()
 	print("Data transformation and loading to final table completed!!")
-	
-	#heyyy
-	#hi
+
 	
 if __name__=="__main__":
     main()
