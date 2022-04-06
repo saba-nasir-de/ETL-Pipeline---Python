@@ -4,6 +4,7 @@
 "ip":"10.36.25.74",
 "port":"3306",
 "file_path":"C:\\python_projects\\pipeline\\sample.csv",
-"staging_table_name":"`smaple_data_saba`",
+"staging_table_name":"`smaple_data_saba_staging`",
+"final_table_name":"`smaple_data_saba_final`",
 "staging_table_schema":"`daud`"
 }

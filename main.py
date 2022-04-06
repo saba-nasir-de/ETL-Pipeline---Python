@@ -22,6 +22,8 @@ def main():
 	source_calls_data.load_csv_to_mysql(file_path)
 	print("Data loading completed!!")
 	
+	
+	
 	#start transforming and loading data to final table
 	transform = Transform_Load(source_calls_data.staging_table_name,source_calls_data.staging_table_schema,mysql_conn.mysql_connection)
 	print("Data transformation started!!")

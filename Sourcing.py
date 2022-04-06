@@ -54,8 +54,7 @@ class Sourcing:
         #truncate the staging table
          # creating thread
         thread_list = list() 
-        for chunk in pd.read_csv(file_name, chunksize=10000 , header = 0, error_bad_lines=False,
-                    warn_bad_lines=True,encoding="utf-8"):
+        for chunk in pd.read_csv(file_name, chunksize=10000 , header = 0,encoding="utf-8"):
             chunk_count = chunk_count + 1
             if(chunk_count == 1):
                 

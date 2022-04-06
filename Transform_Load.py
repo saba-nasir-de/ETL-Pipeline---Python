@@ -18,8 +18,8 @@ class Transform_Load():
     def transform_Load_sampledata(self):
         # connect to server
         cursor = self.connection.cursor()
-        cursor.callproc('subscription_dwh.p_update_facts')
-        print('Table transformed and Loaded into finaal tables.')
+        cursor.callproc('daud.Transform_and_Load')
+        print('Table transformed and Loaded into final tables.')
 
         # commit & close connection
         cursor.close()
