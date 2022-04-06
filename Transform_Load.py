@@ -10,7 +10,7 @@ After the Transformtions, the data is loaded into the Final Sample Table, ready 
 
 class Transform_Load():
     
-    def __init(self,staging_table_name,staging_table_schema,connection):
+    def __init__(self,staging_table_name,staging_table_schema,connection):
         self.staging_table_name = staging_table_name
         self.staging_table_schema = staging_table_schema
         self.connection = connection
